@@ -4,10 +4,14 @@ import sys
 # USAGE: python tower.py <disks> <pegs>
 
 # Used a special method to model n disks, m pegs hanoi problem,
+# Soving 7 disks, 7 pegs hanoi problem with optimal answer in 3 mins, in 8 GB 2.7 GHz i5 macbook.
+# Came up with this idea in EECS 325 Intro to AI courses.
+
 # The searching method is normal, bfs, but the modeling method might be helpful later.
 # If you want to use my idea, please cite. You want to learn and I want a job, let's help each other.
 
 def hanoi(pegs, disks):
+    # n dimension state space. And actually is not boolean space.
     state_space = get_n_d_boolean_space(disks, pegs)
     # 0 : un searched
     # -1: searched
@@ -19,6 +23,8 @@ def hanoi(pegs, disks):
 
     return bfs(state_space, [0 for i in range(disks)], pegs)
 
+# This cool bfs path_backtrace method was learned from
+# http://eddmann.com/posts/depth-first-search-and-breadth-first-search-in-python/
 def bfs(space, start_coord, pegs):
     queue = [(start_coord, [start_coord])]
     while queue:
