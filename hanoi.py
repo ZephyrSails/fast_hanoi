@@ -3,6 +3,10 @@ import copy
 import sys
 # USAGE: python tower.py <disks> <pegs>
 
+# Used a special method to model n disks, m pegs hanoi problem,
+# The searching method is normal, bfs, but the modeling method might be helpful later.
+# If you want to use my idea, please cite. You want to learn and I want a job, let's help each other.
+
 def hanoi(pegs, disks):
     state_space = get_n_d_boolean_space(disks, pegs)
     # 0 : un searched
