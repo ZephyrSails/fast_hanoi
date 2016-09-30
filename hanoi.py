@@ -57,7 +57,7 @@ def get_valid_moves(space, state, pegs):
             for valid_peg in list((set([k for k in range(pegs)]) - smaller_standing_points)):
                 valid_coord = copy.copy(state)
                 valid_coord[i] = valid_peg
-                move = [i, valid_peg]
+                # move = [i, valid_peg]
                 if get_value_from_n_d_space(space, valid_coord) >= 0:
                     # ans.append((move, valid_coord))
                     ans.append(valid_coord)
