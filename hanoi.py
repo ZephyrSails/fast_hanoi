@@ -10,6 +10,7 @@ import sys
 # The searching method is normal, bfs, but the modeling method might be helpful later.
 # If you want to use my idea, please CITE. You want to learn and I want a job, let's help each other.
 
+
 def hanoi(pegs, disks):
     # n dimension state space. And actually is not boolean space.
     state_space = get_n_d_boolean_space(disks, pegs)
@@ -22,6 +23,7 @@ def hanoi(pegs, disks):
     set_value_from_n_d_space(state_space, [0 for i in range(disks)], -1)
 
     return bfs(state_space, [0 for i in range(disks)], pegs)
+
 
 # This cool bfs path_backtrace method was learned from
 # http://eddmann.com/posts/depth-first-search-and-breadth-first-search-in-python/
@@ -36,6 +38,7 @@ def bfs(space, start_coord, pegs):
             else:
                 set_value_from_n_d_space(space, next, -1)
                 queue.append((next, path + [next]))
+
 
 def get_valid_moves(space, state, pegs):
     ans = []
@@ -53,7 +56,7 @@ def get_valid_moves(space, state, pegs):
                 break
             else:
                 smaller_standing_points.add(smaller_disk_position)
-        if covered == False:
+        if not covered:
             for valid_peg in list((set([k for k in range(pegs)]) - smaller_standing_points)):
                 valid_coord = copy.copy(state)
                 valid_coord[i] = valid_peg
@@ -63,15 +66,18 @@ def get_valid_moves(space, state, pegs):
                     ans.append(valid_coord)
     return ans
 
+
 def get_n_d_boolean_space(n, m):
     if n == 1:
         return [0 for i in range(m)]
     return [get_n_d_boolean_space(n-1, m) for i in range(m)]
 
+
 def get_value_from_n_d_space(space, coordinate):
     if len(coordinate) == 1:
         return space[coordinate[0]]
     return get_value_from_n_d_space(space[coordinate[0]], coordinate[1:])
+
 
 def set_value_from_n_d_space(space, coordinate, value):
     if len(coordinate) == 1:
