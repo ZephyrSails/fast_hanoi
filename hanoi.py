@@ -8,7 +8,7 @@ import sys
 # Came up with this idea in EECS 325 Intro to AI courses.
 
 # The searching method is normal, bfs, but the modeling method might be helpful later.
-# If you want to use my idea, please cite. You want to learn and I want a job, let's help each other.
+# If you want to use my idea, please CITE. You want to learn and I want a job, let's help each other.
 
 def hanoi(pegs, disks):
     # n dimension state space. And actually is not boolean space.
@@ -81,4 +81,3 @@ def set_value_from_n_d_space(space, coordinate, value):
 
 if __name__ == '__main__':
     print hanoi(int(sys.argv[1]), int(sys.argv[2]))
-# print get_valid_moves(hanoi(3, 3), [0,0,0], 3)
