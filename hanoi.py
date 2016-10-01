@@ -63,9 +63,9 @@ def get_valid_moves(space, state, pegs):
             for valid_peg in list((set([k for k in range(pegs)]) - smaller_standing_points)):
                 valid_coord = copy.copy(state)
                 valid_coord[i] = valid_peg
-                # move = [i, valid_peg]
+                # move = [state[i], valid_peg]
                 if get_value_from_n_d_space(space, valid_coord) >= 0:
-                    # if i == len(state)-1 and valid_peg != pegs-1
+                    # One dim faster:
                     if i != len(state)-1 or valid_peg == pegs-1:
                         ans.append(valid_coord)
                     # ans.append((move, valid_coord))
@@ -90,7 +90,8 @@ def set_value_from_n_d_space(space, coordinate, value):
         return
     return set_value_from_n_d_space(space[coordinate[0]], coordinate[1:], value)
 
+
 if __name__ == '__main__':
     print hanoi(int(sys.argv[1]), int(sys.argv[2]))
 
-hanoi(3, 3)
+# hanoi(3, 3)
