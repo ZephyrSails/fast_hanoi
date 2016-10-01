@@ -62,8 +62,10 @@ def get_valid_moves(space, state, pegs):
                 valid_coord[i] = valid_peg
                 # move = [i, valid_peg]
                 if get_value_from_n_d_space(space, valid_coord) >= 0:
+                    # if i == len(state)-1 and valid_peg != pegs-1
+                    if i != len(state)-1 or valid_peg == pegs-1:
+                        ans.append(valid_coord)
                     # ans.append((move, valid_coord))
-                    ans.append(valid_coord)
     return ans
 
 
@@ -87,3 +89,5 @@ def set_value_from_n_d_space(space, coordinate, value):
 
 if __name__ == '__main__':
     print hanoi(int(sys.argv[1]), int(sys.argv[2]))
+
+hanoi(3, 3)
