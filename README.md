@@ -1,5 +1,5 @@
 # fast_hanoi
-a bfs based method to solve m pegs, n disks hanio problem.
+a bfs based method to solve m pegs, n disks hanio problem, quickly.
 
 Invented by Zhiping X.
 
