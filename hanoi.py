@@ -4,6 +4,9 @@ import sys
 # USAGE: python tower.py <disks> <pegs>
 
 # Used a special method to model n disks, m pegs hanoi problem,
+# Oct 1:
+# Soving 7 disks, 7 pegs hanoi problem with optimal answer in 30 secs, in 8 GB 2.7 GHz i5 macbook.
+# Sept 29:
 # Soving 7 disks, 7 pegs hanoi problem with optimal answer in 3 mins, in 8 GB 2.7 GHz i5 macbook.
 # Came up with this idea in EECS 325 Intro to AI courses.
 
