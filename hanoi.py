@@ -11,7 +11,7 @@ import sys
 # Came up with this idea in EECS 325 Intro to AI courses.
 
 # The searching method is normal, bfs, but the modeling method might be helpful later.
-# If you want to use my idea, please CITE. You want to learn and I want a job, let's help each other.
+# If you want to use my idea, please cite this page, thank you~
 
 
 def hanoi(pegs, disks):
@@ -64,7 +64,7 @@ def get_valid_moves(space, state, pegs):
                 valid_coord = copy.copy(state)
                 valid_coord[i] = valid_peg
                 # move = [state[i], valid_peg]
-                if get_value_from_n_d_space(space, valid_coord) >= 0:
+                if get_value_from_n_d_space(space, valid_coord) >= 0: # Deja vu?
                     # One dim faster:
                     if i != len(state)-1 or valid_peg == pegs-1:
                         ans.append(valid_coord)
